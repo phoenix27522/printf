@@ -34,6 +34,11 @@ int _printf(const char *format, ...)
 					}
 					i++; /*with out this the string prints String:[I am a string !s] not String:[I am a string !]*/
 					break;
+				case '%': /* We need to handle % specifier too */
+					_putchar('%');
+					i++;
+					num_char++;
+					break;
 				default:
 					break;
 			}
