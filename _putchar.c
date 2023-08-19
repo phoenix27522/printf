@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
  * _putchar - writes the character c to stdout
@@ -11,15 +11,17 @@ int _putchar(char *fsp,va_list args, int *indx)
 {
 	int i;
 
-	format_sp format_sp_arr[] = {
-		{'c', spf_chr}, {'s', spf_str}, {'%', spf_psnt}
+	format_sp1 format_sp_arr[] =
+	{
+		{'c', spf_char}, {'s', spf_str}, {'%', spf_psnt}
 	};
 
-	for (i = 0; format_sp_arr[i].format_sp != '\0'; i++)
+	for (i = 0; format_sp_arr[i].ft_sp != '\0'; i++)
 	{
-		if (fsp[indx] == format_sp_arr[i].format_sp)
+		if (fsp[*indx] == format_sp_arr[i].ft_sp)
 				return (format_sp_arr[i].func_sp(args));
 	}
 	
-	return (write(1, &fsp[*indx], 1));
+	putchar(fsp[*indx]);
+	return (1);
 }

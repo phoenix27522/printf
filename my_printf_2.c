@@ -43,13 +43,13 @@ int _printf(const char *format, ...)
 				break;/*format specifier incomplete, break the loop*/
 			}
 			specifier = format[i];
-			printed_char = _putchar(specifier, args, indx);
+			printed_char = _putchar(&specifier, args, &indx);
 
 			num_of_chars += printed_char;
 		}
 		else
 		{
-			_putchar(format[i], args, -1);/* prints regular chars */
+			putchar(format[i]);/* prints regular chars */
 			num_of_chars++;
 		}
 	}

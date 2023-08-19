@@ -10,7 +10,7 @@ int spf_char(va_list args)
 
 	c_spf = va_arg(args, int);
 
-	_putchar(c_spf);
+	putchar(c_spf);
 
 	return (0);
 }
@@ -29,7 +29,7 @@ int spf_str(va_list args)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
+		_putchar(str, args, NULL);
 		len++;
 	}
 
@@ -43,6 +43,8 @@ int spf_str(va_list args)
  */
 int spf_psnt(va_list args)
 {
-	_putchar('%');
+	(void)args;
+
+	putchar('%');
 	return (1);
 }

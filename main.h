@@ -3,10 +3,10 @@
 
 #include <stdio.h>
 #include <stdarg.h>
-
+#include <unistd.h>
 
 int _printf(const char *format, ...);
-int _putchar(char c, va_list args, int indx);
+int _putchar(char *fsp, va_list args, int *indx);
 int is_format_specifier(char c);
 void print_num(int);
 
@@ -15,16 +15,24 @@ void print_num(int);
  * @ft_sp: specifier
  * @func_sp: fucnction for each specifer
  */
-typedef struct format_sp
+struct format_sp
 {
 	char ft_sp;
 	int (*func_sp)(va_list);
 
-} format_sp;
+};
 
+/**
+ * typedef struct fmt fmt_t - Struct op
+ *
+ * @ft_sp: The format.
+ * @func_sp: The function associated.
+ */
+typedef struct format_sp format_sp1;
 /* ---------- Print_ch_str.c ------*/
 
 int spf_char(va_list args);
 int spf_str(va_list args);
+int spf_psnt(va_list args);
 
 #endif
