@@ -6,7 +6,7 @@
 
 
 int _printf(const char *format, ...);
-int _putchar(char c);
+int _putchar(char c, va_list args, int indx);
 void print_num(int);
 
 /**
@@ -17,9 +17,13 @@ void print_num(int);
 typedef struct format_sp
 {
 	char ft_sp;
-	int (*func_sp)(va_list args);
+	int (*func_sp)(va_list);
 
 } format_sp;
 
+/* ---------- Print_ch_str.c ------*/
+
+int spf_char(va_list args);
+int spf_str(va_list args);
 
 #endif
