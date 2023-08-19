@@ -29,10 +29,20 @@ int spf_str(va_list args)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(*str);
+		_putchar(str[i]);
 		len++;
 	}
 
 	return(len);
 }
 
+/**
+ * spf_str - prints string
+ * @args: list of arguments
+ * Return: zero
+ */
+int spf_psnt(va_list args)
+{
+	_putchar('%');
+	return (1);
+}

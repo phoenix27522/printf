@@ -1,5 +1,15 @@
 #include "main.h"
 /**
+ * is_format_specifier - check if it is specifier
+ * @c: char to be checked
+ * Return: specifier
+ */
+int is_format_specifier(char c)
+{
+	return (c == 'c' || c == 's' || c == '%');
+}
+
+/**
  * _printf - Printf function
  * @format: format.
  * Return: Printed chars.

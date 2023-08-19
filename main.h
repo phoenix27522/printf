@@ -7,6 +7,7 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c, va_list args, int indx);
+int is_format_specifier(char c);
 void print_num(int);
 
 /**
