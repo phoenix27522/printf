@@ -17,7 +17,7 @@ void print_num(int);
 typedef struct format_sp
 {
 	char ft_sp;
-	int (*func_sp)(va_list args, int);
+	int (*func_sp)(va_list args);
 
 } format_sp;
 
