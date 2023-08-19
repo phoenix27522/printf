@@ -20,8 +20,6 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			indx = i;
-			i++;/* goes beyond '%' */
-
-			while (format[i] != '\0' && !is_format_specifier(format[i]))     
+			i++;/* goes beyond '%' */ 
 
 
