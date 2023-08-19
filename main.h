@@ -8,4 +8,17 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 
+/**
+ * struct format_sp - Struct op
+ * @ft_sp: specifier
+ * @func_sp: fucnction for each specifer
+ */
+typedef struct format_sp
+{
+	char ft_sp;
+	int (*func_sp)(va_list args, int);
+
+} format_sp;
+
+
 #endif
