@@ -7,8 +7,7 @@
  */
 int print_fsp(const char *fmt, va_list args)
 {
-	/* num_char keeps track of the total number of characters printed*/
-	/* add stores the num of char added to the output by current print func*/
+	/* num_char keeps track of the total number of characters printed & store*/
 	/* indx keeps track of the current position within the format string*/
 	int indx = 0, num_of_char = 0, i;
 
