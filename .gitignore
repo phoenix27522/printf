@@ -1,0 +1,5 @@
+# Ignore a specific file
+main .c
+
+# Ignore compiled binaries
+a.out

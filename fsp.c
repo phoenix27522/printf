@@ -31,7 +31,7 @@ int fsp_str(va_list args)
 	if (str_fsp == NULL)
 	{
 		write(1, "(null)", 6);
-		return (-1);
+		return (7);
 	}
 	while (*str_fsp != '\0')
 	{

@@ -9,7 +9,7 @@ int print_fsp(const char *fmt, va_list args)
 {
 	/* num_char keeps track of the total number of characters printed & store*/
 	/* indx keeps track of the current position within the format string*/
-	int indx = 0, num_of_char = 0, i;
+	int indx = 0, num_of_char = 0, add = 0, i;
 
 	ft_sp fmtsp_ary[] = {
 		{'c', fsp_char}, {'s', fsp_str}, {'%', fsp_psnt}, {'\0', NULL}
@@ -17,7 +17,7 @@ int print_fsp(const char *fmt, va_list args)
 	while (fmt != NULL && fmt[indx] != '\0')
 	{
 		i = 0;
-		/*a = 0;*/
+		add = 0;
 
 		if (fmt[indx] == '%')
 		{
@@ -26,8 +26,8 @@ int print_fsp(const char *fmt, va_list args)
 			{
 				if (fmt[indx] == fmtsp_ary[i].sp)
 				{
-					num_of_char += fmtsp_ary[i].fs(args);
-					/*num_of_char += add;*/
+					add = fmtsp_ary[i].fs(args);
+					num_of_char += add;
 					break;
 				}
 				i++;
