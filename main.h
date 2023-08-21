@@ -4,35 +4,40 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <string.h>
+
+#define BUFF_SIZE 1024
+
 
 int _printf(const char *format, ...);
-int _putchar(char *fsp, va_list args, int *indx);
+int print_fsp(const char *fmt, va_list args, int *indx);
 int is_format_specifier(char c);
-void print_num(int);
+void prt_buffer(char buffer[], int *buff_indx);
 
 /**
- * struct format_sp - Struct op
- * @ft_sp: specifier
- * @func_sp: fucnction for each specifer
+ * struct fmat_sp - Struct op
+ * @sp: specifier
+ * @fs: fucnction for each specifer
  */
-struct format_sp
+struct fmat_sp
 {
-	char ft_sp;
-	int (*func_sp)(va_list);
+	char sp;
+	int (*fs)(va_list);
 
 };
 
 /**
- * typedef struct fmt fmt_t - Struct op
+ * typedef struct fmat_sp ft_sp - Struct op
  *
- * @ft_sp: The format.
- * @func_sp: The function associated.
+ * @sp: specifier.
+ * @fs: the function associated.
  */
-typedef struct format_sp format_sp1;
-/* ---------- Print_ch_str.c ------*/
+typedef struct fmat_sp ft_sp;
 
-int spf_char(va_list args);
-int spf_str(va_list args);
-int spf_psnt(va_list args);
+/* ---------- ch_str_psnt.c ------*/
+
+int fsp_char(va_list args);
+int fsp_str(va_list args);
+int fsp_psnt(va_list args);
 
 #endif

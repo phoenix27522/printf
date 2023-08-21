@@ -4,15 +4,13 @@
  * @args: List a of arguments
  * Return: zero
  */
-int spf_char(va_list args)
+int fsp_char(va_list args)
 {
-	char c_spf;
+	char c_fsp;
 
-	c_spf = va_arg(args, int);
+	c_fsp = va_arg(args, int);
 
-	putchar(c_spf);
-
-	return (0);
+	return (write(1, &c_fsp, 1));
 }
 
 /**
@@ -20,20 +18,20 @@ int spf_char(va_list args)
  * @args: list of arguments
  * Return: zero
  */
-int spf_str(va_list args)
+int fsp_str(va_list args)
 {
-	int len = 0, i;
+	int len = 0;
 	char *str;
 
 	str = va_arg(args, char *);
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		_putchar(str, args, NULL);
-		len++;
-	}
+	if (str == NULL)
+		str = "(null)";
 
-	return(len);
+	while (str[len] != '\0')
+		len++;
+
+	return(write(1, str, len));
 }
 
 /**
@@ -41,10 +39,9 @@ int spf_str(va_list args)
  * @args: list of arguments
  * Return: zero
  */
-int spf_psnt(va_list args)
+int fsp_psnt(va_list args)
 {
 	(void)args;
 
-	putchar('%');
-	return (1);
+	return (write(1, "%%", 1));
 }
