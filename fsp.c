@@ -25,21 +25,21 @@ int fsp_char(va_list args)
  */
 int fsp_str(va_list args)
 {
-	int n = 0;
+	int len = 0;
 	char *str_fsp = va_arg(args, char *);
 
 	if (str_fsp == NULL)
 	{
-		write(1, "(null)", 6);
-		return (7);
+		str_fsp = "(null)";
 	}
 	while (*str_fsp != '\0')
 	{
 		write(1, str_fsp, 1);
-		n++;
 		str_fsp++;
+		len++;
 	}
-	return (n);
+	len++;/*account for the null-terminator*/
+	return (len);
 }
 
 /**
