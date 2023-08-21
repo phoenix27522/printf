@@ -31,6 +31,7 @@ int fsp_str(va_list args)
 	if (str_fsp == NULL)
 	{
 		str_fsp = "(null)";
+		len++;
 	}
 	while (*str_fsp != '\0')
 	{
@@ -38,7 +39,6 @@ int fsp_str(va_list args)
 		str_fsp++;
 		len++;
 	}
-	len++;/*account for the null-terminator*/
 	return (len);
 }
 
