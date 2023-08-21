@@ -9,8 +9,12 @@ int fsp_char(va_list args)
 	char c_fsp;
 
 	c_fsp = va_arg(args, int);
+	write(1, &c_fsp, 1);
 
-	return (write(1, &c_fsp, 1));
+	if (c_fsp == '\0')
+		return (0);
+
+	return (1);
 }
 
 /**
@@ -26,12 +30,17 @@ int fsp_str(va_list args)
 	str = va_arg(args, char *);
 
 	if (str == NULL)
+	{
 		str = "(null)";
-
+		write(1, str, 6);
+	}
 	while (str[len] != '\0')
+	{
+		write(1, str + len, 1);
 		len++;
+	}
 
-	return(write(1, str, len));
+	return(len);
 }
 
 /**
@@ -43,5 +52,7 @@ int fsp_psnt(va_list args)
 {
 	(void)args;
 
-	return (write(1, "%%", 1));
+	write(1, "%", 1);
+
+	return (1);
 }

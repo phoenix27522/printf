@@ -8,39 +8,40 @@
  */
 int print_fsp(const char *fmt, va_list args, int *indx)
 {
-	int i, error = -1, len = 0;
+	int i, num_char = 0;
 
 	ft_sp fmtsp_ary[] = 
 	{
 		{'c', fsp_char}, {'s', fsp_str}, {'%', fsp_psnt}
 	};
 
-	for (i = 0; fmtsp_ary[i].sp != '\0'; i++)
+	for (;fmt != NULL && fmt[*indx] != '\0'; (*indx)++)
 	{
-	       if (fmt[*indx] == fmtsp_ary[i].sp)
-	       {
-		       return (fmtsp_ary[i].fs(args));/* here */
-	       }
-	}
-	if (fmtsp_ary[i].sp == '\0')
-	{
-		if (fmt[*indx] == '\0')
-			return (-1);
-		len += write(1, "%%", 1);
-		if (fmt[*indx - 1] == ' ')
-			len += write(1, " ", 1);
+		if (fmt[*indx] != '%')
+		{
+			for (i = 0; fmtsp_ary[i].sp != '\0'; i++)
+			{
+				if (fmt[*indx] == fmtsp_ary[i].sp)
+				{
+					num_char += fmtsp_ary[i].fs(args);/* here */
+					break;/* forgat that, caused segment deafult*/
+				}
+			}
+
+			if (fmtsp_ary[i].sp == '\0')
+			{
+				/*write(1, &fmt[*indx - 1], 1); printing the % character itself*/
+				write(1, &fmt[*indx], 1);/*char is printed as-is, it didn't match any*/
+				num_char++;
+			}
+		}
+		/*when the current character in the format string is not %*/
 		else
 		{
-			--(*indx);
-			while (fmt[*indx] != ' ' && fmt[*indx] != '%')
-				--(*indx);
-			if (fmt[*indx] == ' ')
-				--(*indx);
-			return (1);
+			 (*indx)++;
+			num_char++;
+			write(1, &fmt[*indx], 1);
 		}
-		len += write(1, &fmt[*indx], 1);
-		return (len);
 	}
-	
-	return (error);
+	return (num_char);
 }
