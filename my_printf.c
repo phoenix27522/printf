@@ -1,43 +1,23 @@
 #include "main.h"
 /**
- * _printf - Printf function
- * @format: format.
- * Return: Printed chars.
+ * _printf - prints characters and strings
+ * @format: the operators and string to be printed
+ * Description - this function prints a string and chars
+ * Return: the string length or -1
  */
 int _printf(const char *format, ...)
 {
-	int i, total_chars_written = 0, specifier_found = 0;
-	int buff_indx= 0;
-	char buffer[BUFF_SIZE];
-
 	va_list args;
-
-	if (format == NULL)
-		return (-1);
+	int i;
 
 	va_start(args, format);
 
-	for (i = 0; format[i] != '\0'; i++)
-	{
-		if (format[i] == '%')
-		{
-			buffer[buff_indx++] = format[i];
-			if (buff_indx == BUFF_SIZE)
-				prt_buffer(buffer, &buff_indx);
-			total_chars_written++;
-		}
-		else 
-		{
-			prt_buffer(buffer, &buff_indx);
-			specifier_found = print_fsp(format, args, &i);
-			if (specifier_found == -1)
-			{
-				return (-1);
-			}
-			total_chars_written += specifier_found;
-		}
-	}
-	prt_buffer(buffer, &buff_indx);
+	if (!format || !format[1])
+		return (-1);
+
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	i = print_fsp(format, args);
 	va_end(args);
-	return (total_chars_written);
+	return (i);
 }

@@ -1,15 +1,18 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef PRINT_H
+#define PRINT_H
 
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
 
+#define BUFF_SIZE 1024
 
 
 int _printf(const char *format, ...);
-int print_fsp(const char *fmt, va_list args);
+int print_fsp(const char *fmt, va_list args, int *indx);
+int is_format_specifier(char c);
+void prt_buffer(char buffer[], int *buff_indx);
 
 /**
  * struct fmat_sp - Struct op
