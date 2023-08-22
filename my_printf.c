@@ -8,33 +8,31 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int num_char = 0;
+	int i, j;
 	int last_char;
 
-	/*va_start(args, format);*/
+	va_start(args, format);
 
 	if (format[0] == '\0')
 	{
 		return (0);
 	}
 
-	if ((format[0] == '%' && format[1] == '\0')
-			|| (format[0] == '%' && format[1] == ' ' && format[2] == '\0'))
-	{
-		return (-1);
-	}
-	if (format != NULL)
-	{
-		va_start(args, format);
-		num_char = print_fsp(format, args);
-		va_end(args);
-	}
-	else
+	if (!format || !format[1])
 		return (-1);
 
-	last_char = format[_strlen(format) - 1];
+	
+	for (j = 0; format[j] != '\0'; j++)
+	{
+		if (format[j] == '%' && format[j + 1] == ' ' && format[j + 2] == '\0')
+			return (-1);
+	}
+
+	last_char = format[strlen(format) - 1];
         if (last_char == '%')
                 return (-1);
 
-	return (num_char);
+	i = print_fsp(format, args);
+	va_end(args);
+	return (i);
 }
