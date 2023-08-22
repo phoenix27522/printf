@@ -21,10 +21,7 @@ int print_fsp(const char *fmt, va_list args)
 		{
 			indx++;
 			if (fmt[indx] == '\0')
-			{
-				write(1, &fmt[indx], 1);
 				return (-1);
-			}
 			while (fmtsp_ary[i].sp != '\0')
 			{
 				if (fmt[indx] == fmtsp_ary[i].sp)
