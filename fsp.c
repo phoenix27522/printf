@@ -21,21 +21,13 @@ int fsp_char(va_list args)
  */
 int fsp_str(va_list args)
 {
-	int len = 0;
-	char *str_fsp = va_arg(args, char *);
+	char *s;
 
-	if (str_fsp == NULL)
-	{
-		str_fsp = "(null)";
-		len++;
-	}
-	while (*str_fsp != '\0')
-	{
-		write(1, str_fsp, 1);
-		str_fsp++;
-		len++;
-	}
-	return (len);
+	s = va_arg(args, char *);
+
+	if (!s)
+		s = "(null)";
+	return (write(1, s, _strlen(s)));
 }
 
 /**
