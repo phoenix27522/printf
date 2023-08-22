@@ -8,25 +8,20 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, j;
+	int i;
 	int last_char;
 
 	va_start(args, format);
 
-	if (format[0] == '\0')
-	{
-		return (0);
-	}
+	if (format == NULL)
+		return (-1);
+	
 
 	if (!format || !format[1])
 		return (-1);
 
-	
-	for (j = 0; format[j] != '\0'; j++)
-	{
-		if (format[j] == '%' && format[j + 1] == ' ' && format[j + 2] == '\0')
-			return (-1);
-	}
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
 
 	last_char = format[strlen(format) - 1];
         if (last_char == '%')
