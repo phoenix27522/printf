@@ -9,7 +9,7 @@
 int fsp_char(va_list args)
 {
 	int char_fsp = va_arg(args, int);
-	
+
 	return (write(1, &char_fsp, 1));
 }
 
