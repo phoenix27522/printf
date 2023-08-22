@@ -39,6 +39,6 @@ int fsp_psnt(va_list args);
 
 
 /* ---------jack of all trade --------*/
-int _strlen(char *s);
+int _strlen(const char *s);
 
 #endif

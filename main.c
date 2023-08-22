@@ -77,6 +77,7 @@ int main(void)
 	printf("Len1:[%d]\n\n", len2);
 
 	len = _printf("A simple sentence%");
+	 printf("lookup\n");
 	len2 = printf("\nA simple sentence%");
 	printf("\nLen:[%d]\n", len);
 	printf("Len1:[%d]\n\n", len2);

@@ -8,25 +8,30 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, j;
-	int last_char;
+	int j, num_char = 0;
 
-	va_start(args, format);
+	/*va_start(args, format);*/
 
-	if (!format || !format[1])
-		return (-1);
-
-	last_char = format[strlen(format) - 1];
-	if (last_char == '%')
-		return (-1);
-
+	if (format[0] == '\0')
+	{
+		return (0);
+	}
 	for (j = 0; format[j] != '\0'; j++)
 	{
-		if (format[j] == '%' && format[j + 1] == ' ' && format[j + 2] == '\0')
+		if ((format[j] == '%' && format[j + 1] == '\0')
+				|| (format[j] == '%' && format[j + 1] == ' ' && format[j + 2] == '\0'))
+		{
 			return (-1);
+		}
 	}
+	if (format != NULL)
+	{
+		va_start(args, format);
+		num_char = print_fsp(format, args);
+		va_end(args);
+	}
+	else
+		return (-1);
 
-	i = print_fsp(format, args);
-	va_end(args);
-	return (i);
+	return (num_char);
 }
