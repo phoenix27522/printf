@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int num_char = 0;
+	int last_char;
 
 	/*va_start(args, format);*/
 
@@ -30,6 +31,10 @@ int _printf(const char *format, ...)
 	}
 	else
 		return (-1);
+
+	last_char = format[_strlen(format) - 1];
+        if (last_char == '%')
+                return (-1);
 
 	return (num_char);
 }
