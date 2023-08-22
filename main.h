@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
 
 
 
@@ -31,6 +32,10 @@ struct fmat_sp
  */
 typedef struct fmat_sp ft_sp;
 
+/*-----size------*/
+#define S_LONG 2
+#define S_SHORT 1
+
 /* ---------- ch_str_psnt.c ------*/
 
 int fsp_char(va_list args);
@@ -40,5 +45,6 @@ int fsp_int(va_list arg);
 
 /* ---------jack of all trade --------*/
 int _strlen(const char *s);
-
+int _putchar(char c);
+void reverse_string(char *s);
 #endif

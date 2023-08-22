@@ -10,7 +10,8 @@ int print_fsp(const char *fmt, va_list args)
 	int indx = 0, num_of_char = 0, add = 0, i;
 
 	ft_sp fmtsp_ary[] = {
-		{'c', fsp_char}, {'s', fsp_str}, {'%', fsp_psnt}, {'\0', NULL}
+		{'c', fsp_char}, {'s', fsp_str}, {'%', fsp_psnt}, {'\0', NULL},
+		{'d', fsp_int}, {'i', fsp_int}
 	};
 	while (fmt != NULL && fmt[indx] != '\0')
 	{

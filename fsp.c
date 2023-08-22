@@ -9,12 +9,8 @@
 int fsp_char(va_list args)
 {
 	int char_fsp = va_arg(args, int);
-
-	write(1, &char_fsp, 1);
-
-	if (char_fsp == '\0')
-		return (0);
-	return (1);
+	
+	return (write(1, &char_fsp, 1));
 }
 
 /**
