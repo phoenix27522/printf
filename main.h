@@ -36,7 +36,7 @@ typedef struct fmat_sp ft_sp;
 int fsp_char(va_list args);
 int fsp_str(va_list args);
 int fsp_psnt(va_list args);
-
+int fsp_int(va_list arg);
 
 /* ---------jack of all trade --------*/
 int _strlen(const char *s);

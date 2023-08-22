@@ -16,7 +16,6 @@ int print_fsp(const char *fmt, va_list args)
 	{
 		i = 0;
 		add = 0;
-
 		if (fmt[indx] == '%')
 		{
 			indx++;
