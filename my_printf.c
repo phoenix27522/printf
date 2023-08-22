@@ -10,23 +10,23 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i;
 	int last_char;
-
+	
 	va_start(args, format);
-
+	
 	if (format == NULL)
 		return (-1);
 	
-
 	if (!format || !format[1])
 		return (-1);
-
+	
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-
+	
 	last_char = format[strlen(format) - 1];
-        if (last_char == '%')
-                return (-1);
-
+	
+	if (last_char == '%')
+		return (-1);
+	
 	i = print_fsp(format, args);
 	va_end(args);
 	return (i);
