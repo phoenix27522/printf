@@ -37,4 +37,8 @@ int fsp_char(va_list args);
 int fsp_str(va_list args);
 int fsp_psnt(va_list args);
 
+
+/* ---------jack of all trade --------*/
+int _strlen(char *s);
+
 #endif

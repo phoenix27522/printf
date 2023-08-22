@@ -33,4 +33,17 @@
     solution:-  making an attempt to improve the _putchar function by passing the format specifier string fsp and the index indx as parameters.
                 The indx value that passed to _putchar represents the index in the format string where the format specifier starts.
                 This index is used to correctly extract the format specifier when you call _putchar. 
-                As long as the _putchar function is designed to handle this correctly, the _printf function should work with it.            
+                As long as the _putchar function is designed to handle this correctly, the _printf function should work with it.
+    
+
+   N.B ---->   the solution on modifing the putchar didnt work it can not handel all thing that i nedded it can only be helper for the bigger func.
+
+
+   try -3(date: 20/18/2023) :- difculties on tracking the format specifier and creating function that can be called from the printf function 
+                               when "%" is found.
+
+   N.B ----> during of coding this  descovered that the lack of applying pointers in function and  left with many errors and segmentfault
+             so no solution for today 
+
+
+         
