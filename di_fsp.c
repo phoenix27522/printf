@@ -39,7 +39,7 @@ char *rev_string(int number)
 
 /**
  * fsp_int - prints an integer
- * @arg: the integer argument
+ * @args: the integer argument
  * Description - function prints a integer argument
  * Return: int
  */
