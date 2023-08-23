@@ -19,12 +19,13 @@ int fsp_binary(va_list args, int len)
 /**
   * print_bi - unsigned int to binary.
   * @num: be convert.
-  * @str_length: characters lenght.
+  * @length: characters lenght.
   * Return: length.
   */
-int print_bi(unsigned int num, int str_length)
+int print_bi(unsigned int num, int length)
 {
-	unsigned int num_digit = 1, indx = 0, temp, length;
+	unsigned int num_digit = 1, indx = 0, temp;
+	 char *binary_str;
 
 	temp = num;
 
@@ -33,7 +34,7 @@ int print_bi(unsigned int num, int str_length)
 		num_digit++;
 	}
 
-	char *binary_str = (char *)malloc((num_digit + 1) * sizeof(char));
+	binary_str = (char *)malloc((num_digit + 1) * sizeof(char));
 
 	if (binary_str == NULL)
 		return (-1);

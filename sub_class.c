@@ -52,7 +52,7 @@ int digits_func(unsigned long num, unsigned int targ, const char *digits)
  * Return: it return length
  */
 
-int _strlen(const char *s)
+int _strlen(char *s)
 {
 	int length = 0;
 
