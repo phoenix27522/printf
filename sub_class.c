@@ -52,7 +52,7 @@ int digits_func(unsigned long num, unsigned int targ, const char *digits)
  * Return: it return length
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int length = 0;
 
@@ -62,4 +62,14 @@ int _strlen(char *s)
 		s++;
 	}
 	return (length);
+}
+void reverse(const char *str)
+{
+	int length, i;
+	length = _strlen(str);
+
+	for (i = length; i > 0; i--)
+	{
+		_putchar(str[i - 1]);
+	}
 }

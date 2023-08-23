@@ -10,7 +10,7 @@
 
 int (*print_fsp(char fptr_find))(va_list, int);
 int _printf(const char *format, ...);
-
+int print_bi(unsigned int num, int str_length);
 /**
   *struct formats - hold fromat specifiers & functions.
   *@id: character.
@@ -29,6 +29,6 @@ int print_int(int, int);
 /*--- sub_class -----*/
 int digits_func(unsigned long num, unsigned int targ, const char *digits);
 unsigned int len_func(unsigned int, int);
-int _strlen(char *s);
-
+int _strlen(const char *s);
+void reverse(const char *str);
 #endif
