@@ -1,26 +1,49 @@
 #include "main.h"
 /**
- * _printf - prints characters and strings
- * @format: the operators and string to be printed
- * Description - this function prints a string and chars
- * Return: the string length or -1
+ * _printf - my own printf function.
+ * @format: format.
+ * Return: characters to print.
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int i;
+	va_list list;
+	int a, str_length;
+	int (*func)(va_list, int);
 
-	va_start(args, format);
-
+	va_start(list, format);
 	if (format == NULL)
 		return (-1);
-
-
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-
-
-	i = print_fsp(format, args);
-	va_end(args);
-	return (i);
+	a = 0;
+	str_length = 0;
+	while (format && format[a])
+	{
+		if (format[a] == '%')
+		{
+			a++;
+			if (format[a] == '%')
+			{
+				str_length = str_length + _putchar(format[a]);
+				a++;
+				continue;
+			}
+			if (format[a] == '\0')
+				return (-1);
+			func = print_fsp(format[a]);
+			if (func != NULL)
+				str_length = func(list, str_length);
+			else
+			{
+				str_length = str_length + _putchar(format[a - 1]);
+				str_length = str_length + _putchar(format[a]);
+			}
+			a++;
+		}
+		else
+		{
+			str_length = str_length + _putchar(format[a]);
+			a++;
+		}
+	}
+	va_end(list);
+	return (str_length);
 }

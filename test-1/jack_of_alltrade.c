@@ -30,26 +30,6 @@ long int cnv_size(long int num, int size)
 	return ((int)num);
 }
 
-/**
- * reverse_string - reverses string
- * @s: string to reverse
- *
- * Return: nothing
- */
-
-void reverse_string(char *s)
-{
-	int start, end;
-	char temp;
-
-	end = _strlen(s) - 1;
-	for (start = 0; start < end; start++, end--)
-	{
-		temp = s[start];
-		s[start] = s[end];
-		s[end] = temp;
-	}
-}
 
 /**
  * _strlen - returns the length of a string
