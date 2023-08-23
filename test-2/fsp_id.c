@@ -12,7 +12,7 @@ int fsp_int(va_list integers, int str_len)
 
 	num = va_arg(integers, int);
 
-	str_len = print_int_func(num, str_len);
+	str_len = print_int(num, str_len);
 	return (str_len);
 }
 
@@ -22,7 +22,7 @@ int fsp_int(va_list integers, int str_len)
   * @str_len: string Length.
   * Return: string length.
   */
-int print_int_func(int num, int str_len)
+int print_int(int num, int str_len)
 {
 	unsigned long b;
 

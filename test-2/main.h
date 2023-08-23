@@ -9,8 +9,6 @@
 #include <stddef.h>
 
 int (*print_fsp(char fptr_find))(va_list, int);
-int _printf(const char *format, ...);
-
 /**
   *struct formats - hold fromat specifiers & functions.
   *@id: character.
@@ -23,12 +21,10 @@ typedef struct fmat_sp
 }ft_sp ;
 
 int _putchar(char c);
+int _printf(const char *format, ...);
 int fsp_int(va_list integers, int str_len);
 int print_int(int, int);
-
-/*--- sub_class -----*/
 int digits_func(unsigned long num, unsigned int targ, const char *digits);
 unsigned int len_func(unsigned int, int);
-int _strlen(char *s);
 
 #endif
