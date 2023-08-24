@@ -13,17 +13,17 @@ int _putchar(char c)
 /**
   *len_func - calculate the length of a string.
   *@num: digits;
-  *@targ: base of digits.
+  *@base: base of digits.
   *Return: length (i).
   */
-unsigned int len_func(unsigned int num, int targ)
+unsigned int len_num(unsigned int num, int base)
 {
 	unsigned int i;
 
 	i = 0;
 	while (num > 0)
 	{
-		num = num / targ;
+		num = num / base;
 		if (num == 0)
 			break;
 		i++;
@@ -33,17 +33,17 @@ unsigned int len_func(unsigned int num, int targ)
 /**
   * digits_func - Print digits.
   * @num: digits.
-  * @targ: digits to convert the digits to.
+  * @base: digits to convert the digits to.
   * @digits: The digits found.
   * Return: length.
   */
 
-int digits_func(unsigned long num, unsigned int targ, const char *digits)
+int print_digit(unsigned long num, unsigned int base, const char *digits)
 {
-	if (num >= targ)
-		digits_func((num / targ), targ, digits);
-	_putchar(digits[num % targ]);
-	return (len_func(num, targ) + 1);
+	if (num >= base)
+		print_digit((num / base), base, digits);
+	_putchar(digits[num % base]);
+	return (len_num(num, base) + 1);
 }
 #include "main.h"
 /**

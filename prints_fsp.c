@@ -8,7 +8,10 @@
 int (*print_fsp(char fptr_find))(va_list, int)
 {
 	ft_sp fmtsp_ary[] = {
-		{'b', fsp_binary}
+		{'b', fsp_binary},
+		{'u', fsp_unsign},
+		{'o', fsp_octal},
+		{'x', fsp_hexa}
 	};
 
 	int i;

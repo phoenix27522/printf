@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * fsp_binary - converts posetive num to binary
+ * fsp_binary - converts +iv num to binary by calling print_bi
  * @args: argument
  * @len:  length of the binary
  * Return: int
@@ -17,8 +17,8 @@ int fsp_binary(va_list args, int len)
 }
 
 /**
-  * print_bi - unsigned int to binary.
-  * @binary: be convert.
+  * print_bi - num to binary.
+  * @binary:  to be converted.
   * @length: characters lenght.
   * Return: length.
   */
@@ -30,7 +30,7 @@ int print_bi(unsigned int binary, int length)
 	}
 
 	_putchar((binary % 2) + '0');
-	length = length + len_func(binary, 2);
+	length = length + len_num(binary, 2);
 
 	return (length + 1);
 
