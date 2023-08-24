@@ -29,6 +29,7 @@ int fsp_binary(va_list args, int len);
 int fsp_unsign(va_list args, int len);
 int fsp_octal(va_list args, int len);
 int fsp_hexa(va_list args, int len);
+int fsp_heXa(va_list args, int len);
 
 /*--- sub_class -----*/
 int _putchar(char c);
