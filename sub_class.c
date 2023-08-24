@@ -63,13 +63,13 @@ int _strlen(char *s)
 	}
 	return (length);
 }
-void reverse(const char *str)
+void reverse(char *str)
 {
 	int length, i;
 	length = _strlen(str);
 
-	for (i = length; i > 0; i--)
+	for (i = length; i >= 0; i--)
 	{
-		_putchar(str[i - 1]);
+		_putchar(str[i]);
 	}
 }
