@@ -27,7 +27,10 @@ int print_bi(unsigned int binary, int length)
 	unsigned int indx = 0, num = binary;
 	char *binary_str;
 
-	length = len_func(binary, 2);
+	if (binary == NULL)
+		return (-1);
+
+	length = length + len_func(binary, 2);
 
 	binary_str = (char *)malloc((length + 1) * sizeof(char));
 
