@@ -18,7 +18,7 @@ int fsp_binary(va_list args, int len)
 
 /**
   * print_bi - unsigned int to binary.
-  * @num: be convert.
+  * @binary: be convert.
   * @length: characters lenght.
   * Return: length.
   */
