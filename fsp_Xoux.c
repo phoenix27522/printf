@@ -117,8 +117,9 @@ int fsp_hexa(va_list args, int len)
  */
 int fsp_heXa(va_list args, int len)
 {
-	int i = 0, remainder;
-	char buffer[20];
+	int i = 0, remainder, output_index = 0;
+	char buffer[BUFFER_SIZE];
+	char output_buffer[BUFFER_SIZE];
 
 	unsigned int num = va_arg(args, unsigned int);
 
@@ -139,11 +140,13 @@ int fsp_heXa(va_list args, int len)
 			num /= 16;
 		}
 	}
+	output_index = 0;
 
 	/* Print the characters in reverse order to get the correct number*/
 	while (i > 0)
 	{
-		_putchar(buffer[--i]);
+		output_buffer[output_index++] = buffer[--i];
 	}
+	write(1, output_buffer, output_index);
 	return (len);
 }
