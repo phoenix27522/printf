@@ -9,7 +9,7 @@
 #include <stddef.h>
 
 
-#define BUFFER_SIZE 1024
+#define BUFF_SIZE 1024
 
 int (*print_fsp(char fptr_find))(va_list, int);
 int _printf(const char *format, ...);

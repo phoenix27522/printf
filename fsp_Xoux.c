@@ -118,8 +118,8 @@ int fsp_hexa(va_list args, int len)
 int fsp_heXa(va_list args, int len)
 {
 	int i = 0, remainder, output_index = 0;
-	char buffer[BUFFER_SIZE];
-	char output_buffer[BUFFER_SIZE];
+	char buffer[BUFF_SIZE];
+	char output_buffer[BUFF_SIZE];
 
 	unsigned int num = va_arg(args, unsigned int);
 
