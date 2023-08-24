@@ -27,7 +27,7 @@ int print_bi(unsigned int binary, int length)
 	unsigned int indx = 0, num = binary;
 	char *binary_str;
 
-	if (binary == NULL)
+	if (binary == 0)
 		return (-1);
 
 	length = length + len_func(binary, 2);
