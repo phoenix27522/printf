@@ -24,31 +24,13 @@ int fsp_binary(va_list args, int len)
   */
 int print_bi(unsigned int binary, int length)
 {
-	unsigned int indx = 0, num = binary;
-	char *binary_str;
-
-	if (binary == 0)
-		return (-1);
-
-	length = length + len_func(binary, 2);
-
-	binary_str = (char *)malloc((length + 1) * sizeof(char));
-
-	if (binary_str == NULL)
-		return (-1);
-
-	while (num > 0)
+	if ((binary / 2) != 0)
 	{
-		binary_str[indx++] = (num % 2) + '0';
-		num /= 2;
+		print_bi(binary / 2, length);
 	}
 
-	binary_str[indx] = '\0';
-
-	reverse(binary_str);
-
-
-	free(binary_str);
+	_putchar((binary % 2) + '0');
+	length = length + len_func(binary, 2);
 
 	return (length + 1);
 
