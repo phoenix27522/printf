@@ -47,7 +47,7 @@ int print_bi(unsigned int binary, int length)
 
 	free(binary_str);
 
-	return (length);
+	return (length + 1);
 
 }
 
