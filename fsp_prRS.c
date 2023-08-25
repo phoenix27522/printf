@@ -88,6 +88,7 @@ int fsp_rot13(va_list args, int len)
 	unsigned int i, j;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
 	len = 0;
 
 	str = va_arg(args, char *);
