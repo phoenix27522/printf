@@ -83,13 +83,12 @@ int fsp_rev(va_list args, int len)
   */
 int fsp_rot13(va_list args, int len)
 {
-	char x;
+	char new;
 	char *str;
 	unsigned int i, j;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	len = 0;
 
 	str = va_arg(args, char *);
 
@@ -101,16 +100,16 @@ int fsp_rot13(va_list args, int len)
 		{
 			if (in[j] == str[i])
 			{
-				x = out[j];
-				write(1, &x, 1);
+				new = out[j];
+				write(1, &new, 1);
 				len++;
 				break;
 			}
 		}
 		if (!in[j])
 		{
-			x = str[i];
-			write(1, &x, 1);
+			new = str[i];
+			write(1, &new, 1);
 			len++;
 		}
 	}
