@@ -1,14 +1,15 @@
-#include "main.h"i
+#include "main.h"
+
+char buffer[BUFF_SIZE];
+int buffer_index = 0;
+
 /**
  * dicard_buff - func writes the contents of the buffer to the standard output
  */
 void discard_buff()
 {
-	char buffer[BUFFER_SIZE];
-	int buffer_index = 0;
-
 	write(1, buffer, buffer_index);
-	buffer_iindex = 0;
+	buffer_index = 0;
 }
 
 /**
@@ -18,10 +19,7 @@ void discard_buff()
  */
 void checker_buffer(char c)
 {
-	char buffer[BUFFER_SIZE];
-	int buffer_index = 0;
-
-	if (buffer_index >= BUFFER_SIZE - 1)
+	if (buffer_index >= BUFF_SIZE - 1)
 		discard_buff();
 
 	buffer[buffer_index++] = c;

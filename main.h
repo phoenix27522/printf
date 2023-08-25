@@ -54,8 +54,11 @@ int fsp_String(va_list args, int len);
 int fsp_addr(va_list args, int len);
 int fsp_rev(va_list args, int len);
 int fsp_rot13(va_list args, int len);
-int fsp_flag(const char *flag, char *indx);
 
+/*-------flag--width--precission---*/
+int fsp_flag(const char *flag, char *indx);
+void discard_buff();
+void checker_buffer(char c);
 /*--- sub_class -----*/
 int _putchar(char c);
 int print_digit(unsigned long num, unsigned int base, const char *digits);
