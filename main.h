@@ -10,6 +10,10 @@
 
 
 #define BUFF_SIZE 1024
+/*--------------- Flag ----------------*/
+#define PLUS 1
+#define SPACE 2
+#define HASH 4
 
 int (*print_fsp(char fptr_find))(va_list, int);
 int _printf(const char *format, ...);
@@ -24,6 +28,19 @@ typedef struct fmat_sp
 	char sp;
 	int (*f)(va_list, int);
 }ft_sp ;
+
+/**
+ * struct flag_s - A new type defining a flags struct.
+ * @flag: A character representing a flag.
+ * @value: The integer value of the flag.
+ */
+typedef struct flag_s
+{
+	unsigned char flag;
+	unsigned char value;
+} flag_t;
+
+
 int main(void);
 int print_bi(unsigned int binary, int length);
 int print_int(int, int);
@@ -37,6 +54,7 @@ int fsp_String(va_list args, int len);
 int fsp_addr(va_list args, int len);
 int fsp_rev(va_list args, int len);
 int fsp_rot13(va_list args, int len);
+int fsp_flag(const char *flag, char *indx);
 
 /*--- sub_class -----*/
 int _putchar(char c);
