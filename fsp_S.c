@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-  *non_print_str - print the str with ASCII == \x.
-  *@n: arguments.
-  *@len: length.
-  *Return: length of characters printed.
+  * fsp_string - print the str with ASCII == \x.
+  * @args: arguments.
+  * @len: length.
+  * Return: length of characters printed.
   */
 int fsp_String(va_list args, int len)
 {
@@ -29,5 +29,21 @@ int fsp_String(va_list args, int len)
 				len += _putchar(str[i]);
 		}
 	}
+	return (len);
+}
+
+/**
+ * fsp_addr - Print address in hexadecimal format.
+ * @args: arguments.
+ * @len: string length.
+ * Return: length.
+ */
+int fsp_addr(va_list args, int len)
+{
+	void *address = va_arg(args, void *);
+
+	len += _printf("0x");
+	len += _printf("%x\n", (unsigned long)address);
+
 	return (len);
 }

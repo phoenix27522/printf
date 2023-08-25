@@ -13,7 +13,8 @@ int (*print_fsp(char fptr_find))(va_list, int)
 		{'o', fsp_octal},
 		{'x', fsp_hexa},
 		{'X', fsp_heXa},
-		{'S', fsp_String}
+		{'S', fsp_String},
+		{'p', fsp_addr}
 	};
 
 	int i;
