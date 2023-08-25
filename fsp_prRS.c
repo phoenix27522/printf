@@ -50,25 +50,26 @@ int fsp_addr(va_list args, int len)
 }
 
 /**
-  * str_rev_func - Print a reversed string.
-  * @chars: List of character.
-  * @str_length: Length of string.
+  * fsp_rev - Print a reversed string.
+  * @args: List of character.
+  * @len: Length of string.
   * Return: length of the reversed string
   */
 int fsp_rev(va_list args, int len)
 {
+	char *str = va_arg(args, char *);
+	int length = 0;
 	int i;
-	char *str, *ret;
 
-	str = va_arg(args, char *);
-	len = _strlen(str);
-	ret = malloc(len + 1);
-	if (!ret)
-		_puts("(null)");
+	if (!str)
+		str = "(null)";
 
-	for (i = 0; i < len; i++)
-		_putchar(ret[i] = str[len - i - 1]);
-	_putchar(ret[i] = '\0');
+	while (str[length])
+		length++;
+
+	for (i = length - 1; i >= 0; i--)
+		len = len + _putchar(str[i]);
 
 	return (len);
+
 }
