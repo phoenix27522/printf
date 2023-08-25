@@ -1,8 +1,7 @@
 #include "main.h"
 /**
- * fsp_hex - print hexadecimal
- * @args: argument
- * @len: length
+ * custom_hexa - print hexadecimal
+ * @num: number
  * Return: Number of written chars.
  */
 int custom_hexa(unsigned long num)

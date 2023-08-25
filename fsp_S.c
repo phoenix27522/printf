@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-  * fsp_string - print the str with ASCII == \x.
+  * fsp_String - print the str with ASCII == \x.
   * @args: arguments.
   * @len: length.
   * Return: length of characters printed.
