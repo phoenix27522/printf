@@ -6,11 +6,11 @@
   * Return: length of string.
   */
 
-int fsp_int(va_list integers, int str_len)
+int fsp_int(va_list args, int str_len)
 {
 	int num;
 
-	num = va_arg(integers, int);
+	num = va_arg(args, int);
 
 	str_len = print_int(num, str_len);
 	return (str_len);

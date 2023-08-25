@@ -14,36 +14,56 @@ int _putchar(char c)
 }
 
 /**
- * cnv_size - Casts a number to the specified size
- * @num: Number to be casted.
- * @size: Number indicating the type to be casted.
- *
- * Return: Casted value of num
- */
-long int cnv_size(long int num, int size)
-{
-	if (size == S_LONG)
-		return (num);
-	else if (size == S_SHORT)
-		return ((short)num);
+  * digits_func - Print digits.
+  * @num: digits.
+  * @targ: digits to convert the digits to.
+  * @digits: The digits found.
+  * Return: length.
+  */
 
-	return ((int)num);
+int digits_func(unsigned long num, unsigned int targ, const char *digits)
+{
+	if (num >= targ)
+		digits_func((num / targ), targ, digits);
+	_putchar(digits[num % targ]);
+	return (len_num(num, targ) + 1);
 }
 
-
 /**
- * _strlen - returns the length of a string
- * @s: string
- * Return: length
+ * _strlen - prints the length of the string
+ * @s: character
+ * Return: it return length
  */
-int _strlen(const char *s)
+
+int _strlen(char *s)
 {
-	int l = 0;
+	int length = 0;
 
 	while (*s != '\0')
 	{
-		l++;
+		length++;
 		s++;
 	}
-	return (l);
+	return (length);
+}
+
+/**
+  *len_num - calculate the length of a string.
+  *@num: digits;
+  *@base: base of digits.
+  *Return: length (i).
+  */
+unsigned int len_num(unsigned int num, int base)
+{
+	unsigned int i;
+
+	i = 0;
+	while (num > 0)
+	{
+		num = num / base;
+		if (num == 0)
+			break;
+		i++;
+	}
+	return (i);
 }

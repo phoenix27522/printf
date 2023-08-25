@@ -7,7 +7,8 @@
  */
 int print_fsp(const char *fmt, va_list args)
 {
-	int indx = 0, num_of_char = 0, add = 0, i;
+	int indx = 0, num_of_char = 0, add = 0, i, flag, width, precision;
+	char buffer[];
 
 	ft_sp fmtsp_ary[] = {
 		{'c', fsp_char}, {'s', fsp_str}, {'%', fsp_psnt}, {'\0', NULL},
@@ -26,7 +27,7 @@ int print_fsp(const char *fmt, va_list args)
 			{
 				if (fmt[indx] == fmtsp_ary[i].sp)
 				{
-					add = fmtsp_ary[i].fs(args);
+					add = fmtsp_ary[i].fs(args, buffer, flag, width, precision);
 					num_of_char += add;
 					break;
 				}
