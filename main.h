@@ -43,4 +43,7 @@ unsigned int len_num(unsigned int, int);
 int _strlen(char *s);
 void reverse(char *str);
 
+/*----- sub_class_2 ----*/
+int custom_hexa(unsigned long addr);
+
 #endif
