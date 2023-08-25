@@ -7,6 +7,8 @@
 #include <limits.h>
 #include <unistd.h>
 #include <stddef.h>
+#include <stdbool.h>
+
 
 
 #define BUFF_SIZE 1024
@@ -54,6 +56,7 @@ int fsp_String(va_list args, int len);
 int fsp_addr(va_list args, int len);
 int fsp_rev(va_list args, int len);
 int fsp_rot13(va_list args, int len);
+void handle_flags(const char **ptr, bool *flag_plus, bool *flag_space, bool *flag_hash);
 
 /*-------flag--width--precission---*/
 int fsp_flag(const char *flag, char *indx);
