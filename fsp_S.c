@@ -42,7 +42,8 @@ int fsp_addr(va_list args, int len)
 {
 	void *address = va_arg(args, void *);
 
-	len += _printf("0x");
+	if (address != 0)
+		len += _puts("0x");
 	len += custom_hexa((unsigned long)address);
 
 	return (len);

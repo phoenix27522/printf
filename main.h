@@ -45,5 +45,6 @@ void reverse(char *str);
 
 /*----- sub_class_2 ----*/
 int custom_hexa(unsigned long addr);
+int _puts(char *str);
 
 #endif

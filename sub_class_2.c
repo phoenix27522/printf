@@ -6,12 +6,12 @@
  */
 int custom_hexa(unsigned long num)
 {
-	int i = 0, remainder, len;
+	int i = 0, remainder, len = 0;
 	char buffer[BUFF_SIZE];
 
 	if (num == 0)
 	{
-		buffer[i++] = '0';
+		len += _puts("(nil)");
 	}
 	else
 	{
@@ -26,8 +26,6 @@ int custom_hexa(unsigned long num)
 		}
 	}
 
-	len = 0;
-
 	/* Print the characters in reverse order to get the correct number*/
 	while (i > 0)
 	{
@@ -35,4 +33,17 @@ int custom_hexa(unsigned long num)
 		len++;
 	}
 	return (len);
+}
+/**
+ * _puts - prints a string to stdout
+ * @str: pointer to the string to print
+ * Return: number of chars written
+ */
+int _puts(char *str)
+{
+	register int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
+	return (i);
 }
