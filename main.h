@@ -36,6 +36,7 @@ int fsp_heXa(va_list args, int len);
 int fsp_String(va_list args, int len);
 int fsp_addr(va_list args, int len);
 int fsp_rev(va_list args, int len);
+int fsp_rot13(va_list args, int len);
 
 /*--- sub_class -----*/
 int _putchar(char c);

@@ -15,7 +15,8 @@ int (*print_fsp(char fptr_find))(va_list, int)
 		{'X', fsp_heXa},
 		{'S', fsp_String},
 		{'p', fsp_addr},
-		{'r', fsp_rev}
+		{'r', fsp_rev},
+		{'R', fsp_rot13}
 	};
 
 	int i;

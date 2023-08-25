@@ -74,3 +74,45 @@ int fsp_rev(va_list args, int len)
 	return (len + 1);
 
 }
+
+/**
+  * fsp_rot13 - prints the rot13'ed string.
+  * @args: argument.
+  * @len: length.
+  * Return: length.
+  */
+int fsp_rot13(va_list args, int len)
+{
+	char x;
+	char *str;
+	unsigned int i, j;
+	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	len = 0;
+
+	str = va_arg(args, char *);
+
+	if (str == NULL)
+		return (-1);
+	for (i = 0; str[i]; i++)
+	{
+		for (j = 0; in[j]; j++)
+		{
+			if (in[j] == str[i])
+			{
+				x = out[j];
+				write(1, &x, 1);
+				len++;
+				break;
+			}
+		}
+		if (!in[j])
+		{
+			x = str[i];
+			write(1, &x, 1);
+			len++;
+		}
+	}
+	return (len);
+}
+
