@@ -23,7 +23,7 @@ int (*print_fsp(char fptr_find))(va_list, int)
 
 	for (i = 0; fmtsp_ary[i].sp; i++)
 	{
-		if (fptr_find == fmtsp_ary[i].sp)
+		if (fptr_find== fmtsp_ary[i].sp)
 		{
 			return (fmtsp_ary[i].f);
 		}
