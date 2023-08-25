@@ -64,7 +64,7 @@ int fsp_rev(va_list args, int len)
 	if (!str)
 		str = "(null)";
 
-	while (str[length])
+	while (str[length] != '\0')
 		length++;
 
 	for (i = length - 1; i >= 0; i--)
