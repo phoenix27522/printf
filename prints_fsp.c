@@ -8,6 +8,8 @@
 int (*print_fsp(char fptr_find))(va_list, int)
 {
 	ft_sp fmtsp_ary[] = {
+		{'d', fsp_int},
+		{'i', fsp_int},
 		{'b', fsp_binary},
 		{'u', fsp_unsign},
 		{'o', fsp_octal},

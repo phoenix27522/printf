@@ -47,3 +47,40 @@ int _puts(char *str)
 		_putchar(str[i]);
 	return (i);
 }
+
+/**
+  * digits_func - Print digits.
+  * @num: digits.
+  * @targ: digits to convert the digits to.
+  * @digits: The digits found.
+  * Return: length.
+  */
+
+int digits_func(unsigned long num, unsigned int targ, const char *digits)
+{
+	if (num >= targ)
+		digits_func((num / targ), targ, digits);
+	_putchar(digits[num % targ]);
+	return (len_func(num, targ) + 1);
+}
+
+/**
+  *len_func - calculate the length of a string.
+  *@num: digits;
+  *@targ: base of digits.
+  *Return: length (i).
+  */
+unsigned int len_func(unsigned int num, int targ)
+{
+	unsigned int i;
+
+	i = 0;
+	while (num > 0)
+	{
+		num = num / targ;
+		if (num == 0)
+			break;
+		i++;
+	}
+	return (i);
+}

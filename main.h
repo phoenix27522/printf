@@ -72,5 +72,8 @@ void reverse(char *str);
 /*----- sub_class_2 ----*/
 int custom_hexa(unsigned long addr);
 int _puts(char *str);
+int digits_func(unsigned long num, unsigned int targ, const char *digits);
+unsigned int len_func(unsigned int num, int targ);
+
 
 #endif

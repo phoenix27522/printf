@@ -15,15 +15,15 @@ void handle_flags(const char *ptr, bool *flag_plus, bool *flag_space, bool *flag
 		 {
 			 case '+':
 				 *flag_plus = true;
-				 add_buffer('+');
+				 _putchar('+');
 				 break;
 			 case ' ':
 				 *flag_space = true;
-				  add_buffer(' ');
+				  _putchar(' ');
 				 break;
 			 case '#':
 				 *flag_hash = true;
-				  add_buffer('0');
+				  _putchar('0');
 				 break;
 		 }
 		 (ptr)++;
