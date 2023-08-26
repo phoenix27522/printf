@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			flag_space = false;
 			flag_hash = false;
 
-			handle_flags(&format, &flag_plus, &flag_space, &flag_hash);
+			handle_flags(&format[a], &flag_plus, &flag_space, &flag_hash);
 
 			if (format[a] == '%')
 			{

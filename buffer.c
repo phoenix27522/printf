@@ -17,7 +17,7 @@ void discard_buff()
  *
  * @c: character you would to print.
  */
-void checker_buffer(char c)
+void add_buffer(char c)
 {
 	if (buffer_index >= BUFF_SIZE - 1)
 		discard_buff();

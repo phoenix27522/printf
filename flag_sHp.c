@@ -7,22 +7,27 @@
  * @flag_hash: Pointer to a boolean variable for the '#' flag.
  *
  */
-void handle_flags(const char **ptr, bool *flag_plus, bool *flag_space, bool *flag_hash)
+void handle_flags(const char *ptr, bool *flag_plus, bool *flag_space, bool *flag_hash)
 {
-	while (**ptr == '+' || **ptr == ' ' || **ptr == '#')
+	while (*ptr == '+' || *ptr == ' ' || *ptr == '#')
 	{
-		 switch (**ptr)
+		 switch (*ptr)
 		 {
 			 case '+':
 				 *flag_plus = true;
+				 add_buffer('+');
 				 break;
 			 case ' ':
 				 *flag_space = true;
+				  add_buffer(' ');
 				 break;
 			 case '#':
 				 *flag_hash = true;
+				  add_buffer('0');
 				 break;
 		 }
-		 (*ptr)++;
+		 (ptr)++;
 	}
 }
+
+
