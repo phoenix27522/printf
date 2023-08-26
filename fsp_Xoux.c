@@ -8,7 +8,7 @@
 int fsp_unsign(va_list args, int len)
 {
 	int i = 0;
-	char buffer[20];
+	char buffer[BUFF_SIZE];
 
 	unsigned int num = va_arg(args, unsigned int);
 
@@ -44,7 +44,7 @@ int fsp_unsign(va_list args, int len)
 int fsp_octal(va_list args, int len)
 {
 	int i = 0;
-	char buffer[20];
+	char buffer[BUFF_SIZE];
 
 	unsigned int num = va_arg(args, unsigned int);
 
@@ -79,7 +79,7 @@ int fsp_octal(va_list args, int len)
 int fsp_hexa(va_list args, int len)
 {
 	int i = 0, remainder;
-	char buffer[20];
+	char buffer[BUFF_SIZE];
 
 	unsigned int num = va_arg(args, unsigned int);
 

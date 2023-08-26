@@ -8,7 +8,6 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int a, str_length;
-	 bool flag_plus, flag_space, flag_hash;
 	int (*func)(va_list, int);
 
 	va_start(list, format);
@@ -20,13 +19,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[a] == '%')
 		{
-			a++;
-
-			flag_plus = false;
-			flag_space = false;
-			flag_hash = false;
-
-			handle_flags(&format[a], &flag_plus, &flag_space, &flag_hash);
+			a++; 
 
 			if (format[a] == '%')
 			{
