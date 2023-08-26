@@ -44,6 +44,9 @@ typedef struct flag_s
 
 
 int main(void);
+int fsp_char(va_list args, int len);
+int fsp_str(va_list args, int len);
+int fsp_psnt(va_list args, int len);
 int print_bi(unsigned int binary, int length);
 int print_int(int, int);
 int fsp_int(va_list integers, int str_len);
